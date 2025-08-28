@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'images/logo.jpg' %}" class="logo">
+    <h2>Student Dashboard</h2>
+  </nav>
+  <div class="content">
+    <h3>Welcome, {{ user.username }}</h3>
+    <ul>
+      <li><a href="#">Find Mentor</a></li>
+      <li><a href="#">View Sessions</a></li>
+      <li><a href="#">Submit Feedback</a></li>
+    </ul>
+  </div>
+</body>
+</html>
