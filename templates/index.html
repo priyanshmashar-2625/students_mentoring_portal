@@ -3,25 +3,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Student Mentoring Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Mentoring Portal</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <div class="container">
-    <div class="left">
-      <img src="{% static 'images/logo.jpg' %}" class="logo">
-      <h1>Welcome, <span>to</span></h1>
-      <p>Student Mentoring Portal</p>
-      <img src="{% static 'images/illustration.png' %}" class="illustration">
+  <!-- Left Section -->
+  <div class="left">
+    <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo">
+
+    <div class="heading-block">
+      <img src="{% static 'images/book.png' %}" alt="Book Icon" class="book-icon">
+      <h1>Welcome<span>, to</span></h1>
+      <p>Students Mentoring portal</p>
     </div>
-    <div class="right">
+
+    <img src="{% static 'images/illustration.png' %}" alt="Illustration" class="illustration">
+  </div>
+
+  <!-- Right Section -->
+  <div class="right">
+    <div class="role-selection">
+      <h3>Select your role</h3>
       <form method="get" action="{% url 'signin' %}">
-        <h3>Select your role</h3>
         <label><input type="radio" name="role" value="admin"> Admin</label>
         <label><input type="radio" name="role" value="mentor"> Mentor</label>
-        <label><input type="radio" name="role" value="student"> Student</label>
-        <br><br>
-        <button type="submit">Next →</button>
+        <label><input type="radio" name="role" value="student"> Student</label><br>
+        <button type="submit" class="btn">Next →</button>
       </form>
     </div>
   </div>
