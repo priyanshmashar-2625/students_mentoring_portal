@@ -7,7 +7,14 @@ def signin(request):
     return render(request, 'signin.html')
 
 def signup(request):
-    return render(request, 'signup.html')
+    role = request.GET.get("role")
+    if role == "admin":
+        return redirect("admin_signin")
+    elif role == "mentor":
+        return redirect("mentor_signin")
+    elif role == "student":
+        return redirect("student_signin")
+    return redirect("index")
 
 def forgot_password(request):
     return render(request, 'forgot_password.html')
@@ -20,3 +27,15 @@ def mentor_dashboard(request):
 
 def student_dashboard(request):
     return render(request, 'student_dashboard.html')
+
+def admin_signin(request):
+    return render(request, "users/admin_signin.html")
+
+def mentor_signin(request):
+    return render(request, "users/mentor_signin.html")
+
+def student_signin(request):
+    return render(request, "users/student_signin.html")
+
+def signup(request):
+    return render(request, "users/signup.html")
